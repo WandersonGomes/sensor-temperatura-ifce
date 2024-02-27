@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Details</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--CABECALHO-->
+    <header>
+        <h1 class="logo">Device Details</h1>
+    </header>
+
+    <!--CONTEUDO-->
+    <main>
+        <!--DADOS-->
+        <section id="section-data">
+            <h2>Real-Time Data</h2>
+
+            <div class="box-gauge">
+                <!--TEMPERATURA-->
+                <div class="gauge-chart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" id="gauge-temperature">
+                        <path class="background" d="M41 149.5a77 77 0 1 1 117.93 0" />
+                        <path id="track-temperature" class="track" stroke="#249863" d="M41 149.5a77 77 0 1 1 117.93 0" />
+                        <path class="striped-background" d="M41 149.5a77 77 0 1 1 117.93 0" />
+
+                        <text x="55" y="80">
+                            <tspan>Temperature</tspan>
+                        </text>
+                        <text text-anchor="middle" class="text-value" x="100" y="120">
+                            <tspan id="value-temperature"></tspan>
+                        </text>
+                    </svg>
+                </div>
+
+                <!--UMIDADE-->
+                <div class="gauge-chart">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" id="gauge-humidity">
+                        <path class="background" d="M41 149.5a77 77 0 1 1 117.93 0" />
+                        <path id="track-humidity" class="track" stroke="#249863" d="M41 149.5a77 77 0 1 1 117.93 0" />
+                        <path class="striped-background" d="M41 149.5a77 77 0 1 1 117.93 0" />
+
+                        <text x="70" y="80">
+                            <tspan>Humidity</tspan>
+                        </text>
+                        <text text-anchor="middle" class="text-value" x="100" y="120">
+                            <tspan id="value-humidity">36</tspan>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!--CONFIGURACOES DO DISPOSITIVO-->
+        <section id="section-device-settings">
+            <h2>Device Settings</h2>
+
+            <form action="./save-settings" method="post" enctype="application/x-www-form-urlencoded">
+                <!--DEVICE-->
+                <fieldset>
+                    <legend>Device</legend>
+
+                    <label for="device-name">Name:</label>
+                    <input name="device-name" value="[DEVICE-NAME]" type="text" autocomplete="off" required>
+                </fieldset>
+
+                <!--WIFI-->
+                <fieldset>
+                    <legend>WiFi</legend>
+    
+                    <label for="wifi-ssid">SSID:</label>
+                    <input name="wifi-ssid" value="[WIFI-SSID]" type="text" autocomplete="off" required>
+                
+                    <label for="wifi-psk">PSK:</label>
+                    <input name="wifi-psk" value="[WIFI-PSK]" type="password" autocomplete="off" required>
+                    
+                    <label for="wifi-ip">IP:</label>
+                    <input name="wifi-ip" value="[WIFI-IP]" type="text" disabled>
+                </fieldset>
+
+                <!--API-->
+                <fieldset>
+                    <legend>API</legend>
+    
+                    <label for="api-url">URL:</label>
+                    <input name="api-url" value="[API-URL]" type="text" autocomplete="off" required>
+                    
+                    <label for="api-authorization">Authorization:</label>
+                    <input name="api-authorization" value="[API-AUTHORIZATION]" type="text" autocomplete="off" required>
+    
+                    <label for="api-data-sending-interval-seconds">Data Sending Interval(s):</label>
+                    <input name="api-data-sending-interval-seconds" value="[API-DATA-SENDING-INTERVAL-SECONDS]" type="number" min="1" max="86400" required>
+                </fieldset>
+
+                <!--WEBSERVER-->
+                <fieldset>
+                    <legend>WebServer</legend>
+    
+                    <label for="webserver-port">Port:</label>
+                    <input name="webserver-port" value="[WEBSERVER-PORT]" type="number" required min="1" max="65535">
+                </fieldset>
+
+                <!--SOFTAP-->
+                <fieldset>
+                    <legend>Soft AP</legend>
+                    <label for="softap-ssid">SSID:</label>
+                    <input name="softap-ssid" value="[SOFTAP-SSID]" type="text" required autocomplete="off">
+    
+                    <label for="softap-psk">PSK:</label>
+                    <input name="softap-psk" value="[SOFTAP-PSK]" type="password" required autocomplete="off">
+                    
+                    <label for="softap-local-ip">IP:</label>
+                    <input name="softap-local-ip" value="[SOFTAP-LOCAL-IP]" type="text" disabled>
+                </fieldset>
+
+                <input type="submit" value="Save">
+            </form>
+        </section>
+
+        <section id="section-about">
+            <h2>About</h2><br>
+            Produced by <strong>Wanderson Gomes da Costa</strong>. <br>
+            For more details click <a href="http://www.github.com/WandersonGomes/temperature-humidity-project-ifce">here</a>.
+        </section>
+    </main>
+
+    <!--JAVASCRIPT-->
+    <script src="javascript.js"></script>
+</body>
+</html>

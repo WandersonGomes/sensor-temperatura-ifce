@@ -1,0 +1,138 @@
+:root {
+    --color-background: #FFFFFF;
+    --color-primary: #C4161C;
+    --color-secondary: #FFCB08;
+    --color-border-light: #DADCE0;
+    --color-shadow: #80808080;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: var(--color-background);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    padding: 15px 5%;
+    box-shadow: 1px 1px 5px var(--color-shadow);
+}
+
+.logo {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1024px;
+    margin: 10px auto;
+    padding: 20px;
+    box-shadow: 1px 1px 5px var(--color-shadow);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    color: #696868;
+}
+
+.box-gauge {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gauge-chart {
+    margin: auto;
+    height: 200px;
+    width: 200px;
+}
+
+.gauge-chart svg path {
+    will-change: auto;
+    stroke-width: 20px;
+    stroke-miterlimit: round;
+    transition: stroke-dashoffset 850ms ease-in-out;
+    fill: none;
+}
+
+.gauge-chart .background {
+    stroke: #E7E7E7;
+}
+
+.gauge-chart .striped-background {
+    stroke-dasharray: 2 30;
+    stroke: white;
+}
+
+.gauge-chart .track {
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350;
+}
+
+.gauge-chart .text-value {
+    font-size: 32pt;
+    font-weight: 900;
+}
+
+fieldset {
+    margin-top: 20px;
+    border: 1px solid var(--color-shadow);
+    border-radius: 2px;
+    padding: 10px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+input[type=text], 
+input[type=password],
+input[type=number],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    padding: 14px 0px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+input[type=submit]:hover {
+    background-color: var(--color-secondary);
+}
+
+#section-about {
+    text-align: center;
+    font-size: 0.5rem;
+}
+
+section {
+    border: 1px solid var(--color-border-light);
+    padding: 10px;
+    margin: 10px;
+}
